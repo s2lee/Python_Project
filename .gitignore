@@ -1,0 +1,5 @@
+venv
+.pylintrc
+settings.json
+.idea
+.DS_Store
