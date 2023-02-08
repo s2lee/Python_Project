@@ -65,11 +65,9 @@ def load_sales(sales_data):
 
 def main():
     SALES_FILE = None
-    # sales = load_sales(SALES_FILE)
-    sales = range(1, 12)
+    sales = load_sales(SALES_FILE)
     stats = SalesOrderStats(sales).process()
-    print(stats.min_order_price)
-    print(stats.max_order_price)
+    print(stats)
 
 
 if __name__ == "__main__":
