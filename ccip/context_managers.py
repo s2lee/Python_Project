@@ -27,7 +27,7 @@ class CalorieHandler:
 
 # 2
 @contextlib.contextmanager
-def handler_calorie():
+def handle_calorie():
     try:
         have_breakfast()
         yield
@@ -36,7 +36,7 @@ def handler_calorie():
 
 
 # 3
-class handler_calorie_decorator(contextlib.ContextDecorator):
+class handle_calorie_decorator(contextlib.ContextDecorator):
     def __enter__(self):
         have_breakfast()
         return self
@@ -45,7 +45,7 @@ class handler_calorie_decorator(contextlib.ContextDecorator):
         exercise_hard()
 
 
-@handler_calorie_decorator()
+@handle_calorie_decorator()
 def work():
     print("When working hard for something, this thing becomes part of us in some way")
 
@@ -54,7 +54,7 @@ def main():
     with CalorieHandler():
         work_hard()
 
-    with handler_calorie():
+    with handle_calorie():
         work_hard()
 
     work()
